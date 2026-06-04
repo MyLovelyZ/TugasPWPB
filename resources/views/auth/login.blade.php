@@ -2,42 +2,64 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="row justify-content-center mt-4">
-        <div class="col-md-5">
-            <div class="card shadow border-0">
-                <div class="card-header bg-primary text-white text-center py-3">
-                    <h5 class="mb-0 fw-bold">Masuk ke SchoolEvent</h5>
-                </div>
-                <div class="card-body p-4">
+    <div class="min-h-[60vh] flex items-center justify-center py-8">
+        <div class="w-full max-w-md">
 
+            {{-- Card --}}
+            <div class="bg-white rounded-3xl border border-yellow-200 shadow-sm overflow-hidden">
+
+                {{-- Header --}}
+                <div class="bg-yellow-400 px-8 py-7 text-center">
+                    <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                        <span class="text-white font-black text-xl">SE</span>
+                    </div>
+                    <h5 class="text-white font-extrabold text-xl">Masuk ke SchoolEvent</h5>
+                    <p class="text-yellow-100 text-xs mt-1">SMK Plus Pelita Nusantara</p>
+                </div>
+
+                <div class="p-8">
+                    {{-- Error Alert --}}
                     @if ($errors->any())
-                        <div class="alert alert-danger">
-                            {{ $errors->first() }}
+                        <div class="bg-red-50 border border-red-200 text-red-600 rounded-2xl px-4 py-3.5 mb-6 flex items-center gap-3 text-sm">
+                            <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>{{ $errors->first() }}</span>
                         </div>
                     @endif
 
-                    <form method="POST" action="/login">
+                    <form method="POST" action="/login" class="space-y-5">
                         @csrf
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Alamat Email</label>
-                            <input type="email" name="email" class="form-control" value="{{ old('email') }}"
-                                placeholder="contoh@email.com" required autofocus>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Alamat Email</label>
+                            <input type="email" name="email" value="{{ old('email') }}"
+                                   placeholder="contoh@email.com" required autofocus
+                                   class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-yellow-400 transition">
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Masukkan password" required>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Password</label>
+                            <input type="password" name="password"
+                                   placeholder="Masukkan password" required
+                                   class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-yellow-400 transition">
                         </div>
-                        <div class="d-grid mt-4">
-                            <button type="submit" class="btn btn-primary btn-lg fw-bold">Masuk</button>
-                        </div>
+
+                        <button type="submit"
+                                class="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-extrabold py-3.5 rounded-2xl transition-colors shadow-sm mt-2">
+                            Masuk Sekarang
+                        </button>
                     </form>
 
-                    <hr class="my-4">
-                    <p class="text-center mb-0">
-                        Belum punya akun? <a href="/register" class="fw-bold">Daftar di sini</a>
-                    </p>
+                    <div class="border-t border-gray-100 mt-7 pt-6 text-center">
+                        <p class="text-gray-500 text-sm">
+                            Belum punya akun?
+                            <a href="/register" class="font-bold text-yellow-500 hover:text-yellow-600 transition-colors">Daftar di sini</a>
+                        </p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 @endsection
