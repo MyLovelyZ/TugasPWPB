@@ -3,9 +3,7 @@
 
 @section('content')
 
-    {{-- ===== HERO SECTION ===== --}}
     <div class="relative bg-linear-to-br from-yellow-50 via-white to-yellow-50 rounded-3xl border border-yellow-200 px-8 py-16 mb-10 text-center overflow-hidden shadow-sm">
-        {{-- Decorative Circles --}}
         <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-100 rounded-full -translate-y-1/2 translate-x-1/3 opacity-50"></div>
         <div class="absolute bottom-0 left-0 w-48 h-48 bg-yellow-100 rounded-full translate-y-1/2 -translate-x-1/3 opacity-50"></div>
 
@@ -24,7 +22,6 @@
         </div>
     </div>
 
-    {{-- ===== EVENT CATALOG ===== --}}
     <div class="mb-8">
         <div class="flex items-center gap-3 mb-6">
             <div class="w-1 h-7 bg-yellow-400 rounded-full"></div>
@@ -35,7 +32,6 @@
             @forelse($events as $event)
                 <div class="bg-white rounded-2xl border border-yellow-100 shadow-sm hover:shadow-lg hover:border-yellow-300 transition-all duration-300 flex flex-col overflow-hidden group">
 
-                    {{-- Poster --}}
                     @if($event->poster)
                         <div class="overflow-hidden h-52">
                             <img src="{{ asset('storage/' . $event->poster) }}"
@@ -51,7 +47,6 @@
                         </div>
                     @endif
 
-                    {{-- Content --}}
                     <div class="p-5 flex flex-col flex-1">
                         <span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-bold px-3 py-1.5 rounded-full mb-3 self-start border border-yellow-200">
                             {{ $event->category->name }}

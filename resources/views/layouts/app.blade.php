@@ -24,12 +24,10 @@
 
 <body class="bg-white min-h-screen flex flex-col font-sans text-gray-800 antialiased">
 
-    {{-- ===== NAVBAR ===== --}}
     <nav class="bg-white border-b-2 border-yellow-300 shadow-sm sticky top-0 z-50" x-data="{ open: false }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
 
-                {{-- Brand --}}
                 <a href="/" class="flex items-center gap-2 group">
                     <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center shadow-sm group-hover:bg-yellow-500 transition-colors">
                         <span class="text-white font-black text-sm">SE</span>
@@ -37,7 +35,6 @@
                     <span class="font-extrabold text-lg text-gray-800 tracking-tight">SchoolEvent</span>
                 </a>
 
-                {{-- Desktop Navigation (Center) --}}
                 <div class="hidden md:flex items-center gap-1">
                     <a href="/"
                        class="px-4 py-2 rounded-lg text-sm font-semibold text-gray-600 hover:text-yellow-600 hover:bg-yellow-50 transition-all">
@@ -55,7 +52,6 @@
                     @endauth
                 </div>
 
-                {{-- Desktop Right Side --}}
                 <div class="hidden md:flex items-center gap-3">
                     @guest
                         <a href="/login"
@@ -67,7 +63,6 @@
                             Daftar
                         </a>
                     @else
-                        {{-- User Dropdown --}}
                         <div class="relative" x-data="{ dropdown: false }" @click.outside="dropdown = false">
                             <button @click="dropdown = !dropdown"
                                     class="flex items-center gap-2.5 pl-1 pr-3 py-1 rounded-xl text-gray-700 hover:bg-yellow-50 border border-transparent hover:border-yellow-200 transition-all">
@@ -119,7 +114,6 @@
                     @endguest
                 </div>
 
-                {{-- Mobile Menu Toggle Button --}}
                 <button @click="open = !open"
                         class="md:hidden p-2 rounded-xl text-gray-500 hover:bg-yellow-50 hover:text-yellow-600 border border-transparent hover:border-yellow-200 transition-all">
                     <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,7 +126,6 @@
             </div>
         </div>
 
-        {{-- Mobile Menu --}}
         <div x-show="open"
              x-transition:enter="transition ease-out duration-200"
              x-transition:enter-start="opacity-0 -translate-y-2"
@@ -167,14 +160,12 @@
         </div>
     </nav>
 
-    {{-- ===== MAIN CONTENT ===== --}}
     <main class="flex-1">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             @yield('content')
         </div>
     </main>
 
-    {{-- ===== FOOTER ===== --}}
     <footer class="bg-yellow-50 border-t-2 border-yellow-200 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">

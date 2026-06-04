@@ -3,28 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Event; // Wajib dipanggil untuk Select Dropdown
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
     public function index()
     {
-        $events = Event::with('category')->latest()->get(); // Ambil data Event beserta relasi Category
+        $events = Event::with('category')->latest()->get();
 
         return view('event_index', compact('events'));
     }
 
     public function create()
     {
-        // Ambil semua daftar kategori dari database
         $categories = Category::all();
 
-        // Lempar ke halaman form agar bisa dijadikan pilihan Dropdown
         return view('event_create', compact('categories'));
     }
 
-    // Fungsi Store (Simpan Data) sama persis dengan konsep Pertemuan 5
     public function store(Request $request)
     {
         $request->validate([

@@ -5,10 +5,8 @@
     <div class="min-h-[60vh] flex items-center justify-center py-8">
         <div class="w-full max-w-lg">
 
-            {{-- Card --}}
             <div class="bg-white rounded-3xl border border-yellow-200 shadow-sm overflow-hidden">
 
-                {{-- Header --}}
                 <div class="bg-yellow-400 px-8 py-7 text-center">
                     <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3">
                         <span class="text-white font-black text-xl">SE</span>
@@ -18,7 +16,6 @@
                 </div>
 
                 <div class="p-8">
-                    {{-- Error Alert --}}
                     @if ($errors->any())
                         <div class="bg-red-50 border border-red-200 text-red-600 rounded-2xl px-4 py-3.5 mb-6 text-sm">
                             <p class="font-bold mb-1.5 flex items-center gap-1.5">

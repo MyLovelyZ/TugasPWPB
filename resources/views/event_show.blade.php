@@ -3,7 +3,6 @@
 
 @section('content')
 
-    {{-- Breadcrumb --}}
     <nav class="flex items-center gap-2 text-sm text-gray-400 mb-6">
         <a href="/" class="hover:text-yellow-500 transition-colors font-medium">Home</a>
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -14,7 +13,6 @@
 
     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-10">
 
-        {{-- Kolom Poster --}}
         <div class="md:col-span-2">
             @if ($event->poster)
                 <img src="{{ asset('storage/' . $event->poster) }}"
@@ -30,14 +28,12 @@
             @endif
         </div>
 
-        {{-- Kolom Detail --}}
         <div class="md:col-span-3">
             <span class="inline-block bg-yellow-100 text-yellow-700 text-sm font-bold px-4 py-1.5 rounded-full border border-yellow-200 mb-4">
                 {{ $event->category->name }}
             </span>
             <h2 class="text-3xl font-black text-gray-800 mb-6 leading-tight">{{ $event->title }}</h2>
 
-            {{-- Info Cards --}}
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 <div class="bg-yellow-50 rounded-2xl p-4 border border-yellow-100">
                     <div class="flex items-center gap-2 mb-1">
@@ -71,7 +67,6 @@
                 </div>
             </div>
 
-            {{-- Deskripsi --}}
             <div class="border-t border-yellow-100 pt-5">
                 <h5 class="font-extrabold text-gray-800 mb-3 flex items-center gap-2">
                     <div class="w-1 h-5 bg-yellow-400 rounded-full"></div>

@@ -3,7 +3,6 @@
 
 @section('content')
 
-    {{-- Header --}}
     <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div>
             <h3 class="text-2xl font-black text-gray-800">Manajemen Data Acara</h3>
@@ -27,7 +26,6 @@
         </div>
     </div>
 
-    {{-- Notifikasi Sukses --}}
     @if (session('success'))
         <div class="bg-green-50 border border-green-200 text-green-700 rounded-2xl px-5 py-4 mb-5 flex items-center gap-3"
              x-data="{ show: true }" x-show="show">
@@ -45,7 +43,6 @@
         </div>
     @endif
 
-    {{-- Tabel --}}
     <div class="bg-white rounded-3xl border border-yellow-100 shadow-sm overflow-hidden">
         <div class="overflow-x-auto">
             <table class="w-full text-sm">

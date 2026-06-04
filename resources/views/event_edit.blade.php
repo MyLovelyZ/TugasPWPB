@@ -4,7 +4,6 @@
 @section('content')
     <div class="max-w-2xl mx-auto">
 
-        {{-- Back Link --}}
         <a href="/events" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-yellow-500 text-sm font-medium mb-5 transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -13,7 +12,6 @@
         </a>
 
         <div class="bg-white rounded-3xl border border-yellow-200 shadow-sm overflow-hidden">
-            {{-- Header --}}
             <div class="bg-yellow-400 px-7 py-5 flex items-center gap-3">
                 <div class="w-9 h-9 bg-white/20 rounded-xl flex items-center justify-center">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -28,7 +26,6 @@
                     @csrf
                     @method('PUT')
 
-                    {{-- Kategori --}}
                     <div>
                         <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Kategori Acara</label>
                         <select name="category_id" required
@@ -41,14 +38,12 @@
                         </select>
                     </div>
 
-                    {{-- Judul --}}
                     <div>
                         <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Judul Acara</label>
                         <input type="text" name="title" value="{{ $event->title }}" required
                                class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-yellow-400 transition">
                     </div>
 
-                    {{-- Tanggal, Lokasi, Kuota --}}
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div>
                             <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Tanggal</label>
@@ -67,23 +62,19 @@
                         </div>
                     </div>
 
-                    {{-- Deskripsi --}}
                     <div>
                         <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Deskripsi</label>
                         <textarea name="description" rows="3" required
                                   class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:border-yellow-400 transition resize-none">{{ $event->description }}</textarea>
                     </div>
 
-                    {{-- Divider --}}
                     <div class="border-t border-yellow-100"></div>
 
-                    {{-- Poster Upload dengan Alpine --}}
                     <div x-data="{ hasNewPreview: false, newPreviewUrl: '' }">
                         <label class="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">
                             Poster Acara <span class="text-gray-400 font-normal normal-case">(abaikan jika tidak diganti)</span>
                         </label>
 
-                        {{-- Poster saat ini --}}
                         @if ($event->poster)
                             <div :class="hasNewPreview ? 'hidden' : ''" class="mb-3">
                                 <p class="text-xs text-gray-400 mb-1.5 font-medium">Poster saat ini:</p>
@@ -92,13 +83,11 @@
                             </div>
                         @endif
 
-                        {{-- Preview poster baru --}}
                         <div x-show="hasNewPreview" class="mb-3">
                             <p class="text-xs text-gray-400 mb-1.5 font-medium">Poster baru:</p>
                             <img :src="newPreviewUrl" class="w-full max-h-56 object-cover rounded-2xl border border-yellow-300 shadow-sm">
                         </div>
 
-                        {{-- Drop Zone --}}
                         <label class="flex flex-col items-center justify-center w-full border-2 border-dashed border-yellow-200 rounded-2xl py-5 px-4 cursor-pointer hover:border-yellow-400 hover:bg-yellow-50 transition-all">
                             <div class="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center mb-2">
                                 <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,7 +107,6 @@
                         </div>
                     </div>
 
-                    {{-- Tombol Aksi --}}
                     <div class="pt-2">
                         <button type="submit"
                                 class="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-3.5 rounded-2xl transition-colors shadow-sm text-sm">

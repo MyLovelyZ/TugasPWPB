@@ -3,7 +3,6 @@
 
 @section('content')
 
-    {{-- Notifikasi Sukses --}}
     @if (session('success'))
         <div class="bg-green-50 border border-green-200 text-green-700 rounded-2xl px-5 py-4 mb-6 flex items-center gap-3"
              x-data="{ show: true }" x-show="show">
@@ -21,10 +20,8 @@
         </div>
     @endif
 
-    {{-- Panel Utama --}}
     <div class="bg-white rounded-3xl border border-yellow-200 shadow-sm overflow-hidden">
 
-        {{-- Header Panel --}}
         <div class="bg-yellow-400 px-7 py-5 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="w-9 h-9 bg-white/20 rounded-xl flex items-center justify-center">
@@ -37,7 +34,6 @@
         </div>
 
         <div class="p-6">
-            {{-- Toolbar --}}
             <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
                 <div>
                     <h5 class="font-extrabold text-gray-800">Daftar Kategori Acara</h5>
@@ -68,7 +64,6 @@
                 </div>
             </div>
 
-            {{-- Tabel --}}
             <div class="overflow-x-auto rounded-2xl border border-yellow-100">
                 <table class="w-full text-sm">
                     <thead>

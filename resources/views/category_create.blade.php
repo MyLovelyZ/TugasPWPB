@@ -4,7 +4,6 @@
 @section('content')
     <div class="max-w-lg mx-auto">
 
-        {{-- Back Link --}}
         <a href="/dashboard" class="inline-flex items-center gap-1.5 text-gray-400 hover:text-yellow-500 text-sm font-medium mb-5 transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -13,7 +12,6 @@
         </a>
 
         <div class="bg-white rounded-3xl border border-yellow-200 shadow-sm overflow-hidden">
-            {{-- Header --}}
             <div class="bg-yellow-400 px-7 py-5 flex items-center gap-3">
                 <div class="w-9 h-9 bg-white/20 rounded-xl flex items-center justify-center">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
